@@ -150,8 +150,9 @@ def _init_objects_ram(hud=False):
     """
     objects = [Player()]  # Player(), PlayerMissileVertical(), Enemy(), EnemyMissile(), MotherShip()
     objects.extend([NoObject()] * 13)
-    # if hud:
-    #     objects.extend([None] * 15)  # [PlayerScore(), Health(), Lives()]
+    if hud:
+        # Extra slots for Lives (up to 3) + Health (at index 14 + lives_count)
+        objects.extend([NoObject()] * 6)
     return objects
 
 
@@ -480,7 +481,7 @@ def _detect_objects_ram(objects, ram_state, hud=False):
 
         if ram_state[21] == 70:
             health.rgb = 200, 72, 72
-        objects[14+ram_state[101]] = health
+        objects[17] = health  # Fixed index: after PlayerScore (8-13) and Lives (14-16)
 
 
 def _detect_objects_assault_raw(info, ram_state):
