@@ -440,7 +440,9 @@ def _detect_objects_ram(objects, ram_state, hud=False):
             sc.xy = 96 - 8 * i, 2
             objects[8+i] = sc
 
-        # lives
+        # lives - clear all slots first, then populate active ones
+        for i in range(3):  # MAX 3 Lives slots
+            objects[14+i] = NoObject()
         for i in range(ram_state[101] - 1):
             liv = Lives()
             liv.xy = 15 + 16 * i, 192
