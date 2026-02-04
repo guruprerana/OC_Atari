@@ -6,10 +6,10 @@ import sys
 RAM extraction for the game ASSAULT. Supported modes: ram.
 """
 
-MAX_NB_OBJECTS = {'Player': 1, 'MotherShip': 1, 'Enemy': 3, 'EnemyMissile': 1, 
-                  'PlayerMissileVertical': 1, 'PlayerMissileHorizontal': 1}
-MAX_NB_OBJECTS_HUD = {'Player': 1, 'PlayerMissileVertical': 1, 'Enemy': 3, 'EnemyMissile': 1, 
-                      'PlayerMissileHorizontal': 1, 'MotherShip': 1,
+MAX_NB_OBJECTS = {'Player': 1, 'PlayerMissileVertical': 1, 'PlayerMissileHorizontal': 1,
+                  'MotherShip': 1, 'Enemy': 3, 'EnemyMissile': 1}
+MAX_NB_OBJECTS_HUD = {'Player': 1, 'PlayerMissileVertical': 1, 'PlayerMissileHorizontal': 1,
+                      'MotherShip': 1, 'Enemy': 3, 'EnemyMissile': 1,
                       'PlayerScore': 6, 'Lives': 3, 'Health': 1}
 
 
